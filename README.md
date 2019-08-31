@@ -1,1 +1,0 @@
-Go to [http://github.tamu.edu/pages/FullMetalKinematics](http://github.tamu.edu/pages/FullMetalKinematics)
