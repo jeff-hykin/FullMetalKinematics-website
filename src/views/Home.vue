@@ -1,7 +1,11 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    Welcome to Full Metal Kinematics
+
+    <h1>Members</h1>
+    <ul class='member-list'>
+      <li v-for='member in members'>{{ member }}</li>
+    </ul>
   </div>
 </template>
 
@@ -13,6 +17,27 @@ export default {
   name: 'home',
   components: {
     HelloWorld
+  },
+  data () {
+    return {
+      members: ['Thomas McDonald', 'Jon Williamson', 'Jeff Hykin', 'Mitchell Eldridge', 'Alejandro Londono']
+    }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.home {
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.member-list {
+  // border: 1px solid black;
+  width: 45%;
+  
+}
+</style>
