@@ -37,7 +37,8 @@ export default {
 
 .member-list {
   // border: 1px solid black;
-  width: 45%;
-  
+  text-align: left;
+  width: 150px;
+  // min-width: 150px;
 }
 </style>

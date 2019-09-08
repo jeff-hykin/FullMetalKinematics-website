@@ -39,4 +39,8 @@ export default {
     }
   }
 }
+
+.title {
+  text-align: center;
+}
 </style>
