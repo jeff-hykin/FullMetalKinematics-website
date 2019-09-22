@@ -1,22 +1,30 @@
 <template>
   <div class="home">
-    Welcome to Full Metal Kinematics
+      
+    <Logo />
+    
+    <div style="padding: 5rem">
+        Welcome to Full Metal Kinematics
+    </div>
 
-    <h1>Members</h1>
+    <h3>Members</h3>
     <ul class='member-list'>
       <li v-for='member in members'>{{ member }}</li>
     </ul>
+    
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import Logo from "@/components/Logo.vue"
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    HelloWorld,
+    Logo
   },
   data () {
     return {
@@ -36,9 +44,6 @@ export default {
 }
 
 .member-list {
-  // border: 1px solid black;
   text-align: left;
-  width: 150px;
-  // min-width: 150px;
 }
 </style>

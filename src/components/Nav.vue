@@ -1,10 +1,7 @@
 <template>
-  <nav>
-      <img alt="FMK logo" src="../assets/logo_slogan_light.png" width='250px'>
-      <div>
+    <b-nav>
         <router-link v-for='page in pages' :to='page.location' class='nav-link'>{{ page.name }}</router-link>
-      </div>
-  </nav>
+    </b-nav>
 </template>
 
 <script>
@@ -27,11 +24,15 @@ export default {
                 }
             ]
         }
-    }
+    },
 }
 </script>
 
 <style lang="scss" scoped>
+.nav {
+    display: flex;
+}
+
 .nav-link {
   margin: 8px;
 }
