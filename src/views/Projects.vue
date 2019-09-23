@@ -34,9 +34,13 @@ export default {
 .project-card {
     max-width: 30rem;
     text-align: left;
+    margin: 1.1rem 1.7rem;
 }
 .card-container {
     display: flex;
-    padding: 2.5rem 10rem;
+    align-content: center;
+    justify-content: center;
+    padding: 0 10rem;
+    flex-wrap: wrap;
 }
 </style>
