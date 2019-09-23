@@ -2,16 +2,13 @@
     <div>
         <h1 class="title" >Projects</h1>
         <div class="card-container" >
-            <b-card class="project-card" title="Card title" sub-title="Card subtitle">
+            <!-- Project1 Summary -->
+            <b-card class="project-card" title="Forward Kinematics" sub-title="2D robot arms">
+                <b-card-text></b-card-text>
                 <b-card-text>
-                Some quick example text to build on the <em>card title</em> and make up the bulk of the card's
-                content.
+                In this project, we used Python3 and Qt canvas. We created a robot arm of 3 linkages with individual controll of each arm, and the ability to draw at the tip of the final linkage
                 </b-card-text>
-
-                <b-card-text>A second paragraph of text in the card.</b-card-text>
-
-                <a href="#" class="card-link">Card link</a>
-                <b-link href="#" class="card-link">Another link</b-link>
+                <b-link href="/projects/project1" class="card-link">Open Project</b-link>
             </b-card>
         </div>
     </div>
