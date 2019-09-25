@@ -8,7 +8,7 @@
                 <b-card-text>
                 In this project, we used Python3 and Qt canvas. We created a robot arm of 3 linkages with individual controll of each arm, and the ability to draw at the tip of the final linkage
                 </b-card-text>
-                <b-link href="/projects/project1" class="card-link">Open Project</b-link>
+                <router-link to="/Projects/project1" class="card-link">Open Project</router-link>
             </b-card>
         </div>
     </div>
