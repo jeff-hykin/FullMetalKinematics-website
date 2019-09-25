@@ -56,4 +56,8 @@ export default {
 .fade-leave-active {
   opacity: 0
 }
+
+.markdown-container img {
+    max-width: 100%;
+}
 </style>
