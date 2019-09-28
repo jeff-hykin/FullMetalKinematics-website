@@ -1,10 +1,7 @@
 <template>
   <div id="app">
     <Nav />
-    <transition
-        name="fade"
-        mode="out-in"
-      >
+    <transition name="fade" mode="out-in" >
         <router-view/>
     </transition>
   </div>
@@ -55,9 +52,5 @@ export default {
 .fade-enter,
 .fade-leave-active {
   opacity: 0
-}
-
-.markdown-container img {
-    max-width: 100%;
 }
 </style>

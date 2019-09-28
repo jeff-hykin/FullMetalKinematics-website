@@ -1,3 +1,4 @@
+<script>
 import Vue from "vue"
 export default Vue.component("markdown", {
   render: function(createElement) {
@@ -50,3 +51,9 @@ export default Vue.component("markdown", {
     }
   },
 })
+</script>
+<style scoped lang="css">
+>>> img {
+    max-width: 100%;
+}
+</style>
