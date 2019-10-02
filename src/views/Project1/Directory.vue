@@ -86,7 +86,8 @@
 
                 #### Running the Program
                 `python main.py`
-
+                
+                <br>
                 #### Description
                 Each joint on the arm is denoted with a blue dot. The first joint, "Joint 1" is at the origin which will be in the center of the arm view, on the left side of the GUI.
                 <br>
