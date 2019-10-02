@@ -29,7 +29,7 @@ export default new Router({
     {
       path: '/projects/project1',
       name: 'project1',
-      component: () => import(/* webpackChunkName: "projects" */ './views/Project1.vue')
+      component: () => import(/* webpackChunkName: "projects" */ './views/Project1/Directory.vue')
     },
   ]
 })
