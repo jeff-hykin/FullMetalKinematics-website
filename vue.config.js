@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/pages/FullMetalKinematics/dist/' : '/'
+  publicPath: process.env.NODE_ENV === 'production' ? '/FullMetalKinematics/dist/' : '/'
 }
