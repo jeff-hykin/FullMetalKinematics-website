@@ -68,7 +68,7 @@
             <!-- Source Code -->
             <markdown id=source-code>
                 # Source Code
-                <a href="https://github.tamu.edu/FullMetalKinematics/Project1">View it here</a>
+                <a target="_blank" href="https://github.tamu.edu/FullMetalKinematics/Project1">View it here</a>
             </markdown>
             <div class=my-v-spacer></div>
             <!-- How to Compile and Run -->
@@ -106,7 +106,7 @@
             <!-- Report -->
             <markdown id=report>
                 # Report
-                <a href="https://drive.google.com/open?id=0Bz6cPkDulveZdHcweGo0U2xKV1lwNUhhd09QVVM0QW42My1J">View it here</a>
+                <a target="_blank" href="https://drive.google.com/open?id=0Bz6cPkDulveZdHcweGo0U2xKV1lwNUhhd09QVVM0QW42My1J">View it here</a>
             </markdown>
         </column>
         <div class=my-center-spacer></div>
@@ -114,12 +114,12 @@
         <div @mouseenter="onHover" @mouseleave="onHoverOff" style="display: flex; margin-top: 2rem;">
             <column class="hover-helper" v-bind:class="{hovered:hoverOn}">
                 <column class=my-reference-card v-bind:class="{hovered:hoverOn}" align-h=left shadow=2 background-color=white>
-                    <a href="#task-allocation">Team Member Task Allocation</a>
-                    <a href="#meeting-log">Meeting Log</a>
-                    <a href="https://github.tamu.edu/FullMetalKinematics/Project1">Source Code</a>
-                    <a href="#how-to-compile-and-run">How to Compile/Run</a>
-                    <a href="#screenshots">Screenshots</a>
-                    <a href="https://drive.google.com/open?id=0Bz6cPkDulveZdHcweGo0U2xKV1lwNUhhd09QVVM0QW42My1J">Report</a>
+                    <a target="_blank" href="#task-allocation">Team Member Task Allocation</a>
+                    <a target="_blank" href="#meeting-log">Meeting Log</a>
+                    <a target="_blank" href="https://github.tamu.edu/FullMetalKinematics/Project1">Source Code</a>
+                    <a target="_blank" href="#how-to-compile-and-run">How to Compile/Run</a>
+                    <a target="_blank" href="#screenshots">Screenshots</a>
+                    <a target="_blank" href="https://drive.google.com/open?id=0Bz6cPkDulveZdHcweGo0U2xKV1lwNUhhd09QVVM0QW42My1J">Report</a>
                 </column>
             </column>
         </div>
