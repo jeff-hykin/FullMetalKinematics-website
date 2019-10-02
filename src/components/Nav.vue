@@ -18,10 +18,6 @@ export default {
                     name: 'About',
                     location: '/about'
                 },
-                {
-                    name: 'Projects',
-                    location: '/Projects'
-                }
             ]
         }
     },

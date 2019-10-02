@@ -14,9 +14,9 @@ export default {
 
 <style lang="css" scoped>
     .image-container {
-        --square-size: 300px;
+        --square-size: 200px;
         --circle-size: 80%;
-        --text-size: 600%;
+        --text-size: 300%;
     }
     
     .text {

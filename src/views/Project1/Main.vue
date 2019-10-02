@@ -163,7 +163,6 @@ export default {
         padding: 2rem 3rem;
         width: 50rem;
         flex-shrink: 0;
-        margin-left: 15rem;
     }
     .my-v-spacer {
         height: 2rem;
@@ -200,7 +199,7 @@ export default {
         .my-reference-card.hovered {
             margin-left: var(--within-padding-bounds);
         }
-        .my-content{
+        .my-content {
             width: fit-content;
             padding: 0;
         }
