@@ -21,48 +21,48 @@
                 
                 #### Meeting 1
                 - 1. Discuss Website Choices 
-                  - Thomas: The main website should be very static as it is primarily a directory. 
-                  - Jeff: I believe that we should use Vue for the website. 
-                  - Thomas: I am tempted to use Vue, but the site may be simple enough to not require Javascript. For the website, each project should have its own page on the website with all of the necessary information. 
-                  - Jon: I found an old website for one of these projects and it had all of the information for the project displayed already. 
-                  - Jeff: Can we decide on Vue? I believe Thomas and I are the only ones with industry web development experience. 
-                  - Jon: I designed tedxtamu.com but that required very little code. 
-                  - Alejandro: I have done html and css for my personal website. 
+                 - Thomas: The main website should be very static as it is primarily a directory. 
+                 - Jeff: I believe that we should use Vue for the website. 
+                 - Thomas: I am tempted to use Vue, but the site may be simple enough to not require Javascript. For the website, each project should have its own page on the website with all of the necessary information. 
+                 - Jon: I found an old website for one of these projects and it had all of the information for the project displayed already. 
+                 - Jeff: Can we decide on Vue? I believe Thomas and I are the only ones with industry web development experience. 
+                 - Jon: I designed tedxtamu.com but that required very little code. 
+                 - Alejandro: I have done html and css for my personal website. 
                 - 2. Discuss Language Choice 
-                  - Thomas: I was thinking we would use Python for the project. 
-                  - Jeff: I am not sure how hard it is to implement asynchronous things in Python. Interactive matplotlib has been a pain for me in the past. However, I think it would be fantastic for all of the matrix math. 
-                  - Thomas: What are we doing that requires asynchronous code? 
-                  - Jeff: Anything interactive, such as clicking a button. 
-                  - Thomas: There are event handlers that can be used for that. 
-                  - Jon: I see no need why we would not separate threads for this project. It seems like we are overcomplicating this project. 
-                  - Thomas: Then we will use Python, as we shouldn’t have to handle anything asynchronously. Javascript can be our back up. 
+                 - Thomas: I was thinking we would use Python for the project. 
+                 - Jeff: I am not sure how hard it is to implement asynchronous things in Python. Interactive matplotlib has been a pain for me in the past. However, I think it would be fantastic for all of the matrix math. 
+                 - Thomas: What are we doing that requires asynchronous code? 
+                 - Jeff: Anything interactive, such as clicking a button. 
+                 - Thomas: There are event handlers that can be used for that. 
+                 - Jon: I see no need why we would not separate threads for this project. It seems like we are overcomplicating this project. 
+                 - Thomas: Then we will use Python, as we shouldn’t have to handle anything asynchronously. Javascript can be our back up. 
                 - 3. Discuss Graphics Library 
-                  - Thomas: If we use Python for the project, we could use Pygame for the graphics. PyQt is another option. 
-                  - Jon: If we want to do something super simple we can use JavaFX. 
-                  - Jeff: I think PyQt is a good choice. There is a GUI for building PyQt applications. It is pretty fast for basic functionality. 
-                  - Thomas: PyQt it is then.
+                 - Thomas: If we use Python for the project, we could use Pygame for the graphics. PyQt is another option. 
+                 - Jon: If we want to do something super simple we can use JavaFX. 
+                 - Jeff: I think PyQt is a good choice. There is a GUI for building PyQt applications. It is pretty fast for basic functionality. 
+                 - Thomas: PyQt it is then.
                 - 4. Discuss Next Steps 
-                  - Thomas: I will set up the website with a Vue template. If time permits I will also set up a basic structure for the projects. 
-                  - Jon: I will formally write up the meeting minutes. We will also plan to have our next meeting over more details of the code and assigning work.
+                 - Thomas: I will set up the website with a Vue template. If time permits I will also set up a basic structure for the projects. 
+                 - Jon: I will formally write up the meeting minutes. We will also plan to have our next meeting over more details of the code and assigning work.
                 
                 #### Meeting 2
                 - 1. Discuss Website
-                  - Mitchell: I am a little confused, does our code need to run on our website? 
-                  - Jon: No, the website is just documentation. 
-                  - Mitchell: So who has made updates to the website so far? 
-                  - Thomas: Jeff and I have made updates to the website. I also began on the GUI this morning in class. 
+                 - Mitchell: I am a little confused, does our code need to run on our website? 
+                 - Jon: No, the website is just documentation. 
+                 - Mitchell: So who has made updates to the website so far? 
+                 - Thomas: Jeff and I have made updates to the website. I also began on the GUI this morning in class. 
                 - 2. Overview
-                  - Team: So how should we split up this project? 
-                  - Thomas: If anyone does not understand the project, please speak up now. First let’s look at current progress. Qt is straightforward. In Qt, a window is a widget. Every component is a widget. Widgets can be nested. Currently the GUI has the display window and the buttons. The transformation matrix is also coded in Python. The control widget is in a vertical box configuration. Are there any questions on what is written? 
-                  - Jeff: Is it necessary to use the full transformation matrices? 
-                  - Team: Yes, it will help us understand the concepts and it might be reusable in the future. 
-                  - Thomas: Looking at planning, I think that we should have a joint class which holds the position, the orientation, and the length of the arm. Then we have a sequence of joints which leads to the paintbrush. 
-                  - Jeff: If we are going to do it the matrix way, there is going to be a transformation matrix under the class joint. Updating transformation matrices would have to be sequential. 
-                  - Mitchell: Wouldn’t we want the paintbrush to just be a point? Why would we need an additional frame? 
-                  - Thomas: Doing that would require a different calculation. If we treat the paintbrush as a frame, then we do not have to write any additional code. 
+                 - Team: So how should we split up this project? 
+                 - Thomas: If anyone does not understand the project, please speak up now. First let’s look at current progress. Qt is straightforward. In Qt, a window is a widget. Every component is a widget. Widgets can be nested. Currently the GUI has the display window and the buttons. The transformation matrix is also coded in Python. The control widget is in a vertical box configuration. Are there any questions on what is written? 
+                 - Jeff: Is it necessary to use the full transformation matrices? 
+                 - Team: Yes, it will help us understand the concepts and it might be reusable in the future. 
+                 - Thomas: Looking at planning, I think that we should have a joint class which holds the position, the orientation, and the length of the arm. Then we have a sequence of joints which leads to the paintbrush. 
+                 - Jeff: If we are going to do it the matrix way, there is going to be a transformation matrix under the class joint. Updating transformation matrices would have to be sequential. 
+                 - Mitchell: Wouldn’t we want the paintbrush to just be a point? Why would we need an additional frame? 
+                 - Thomas: Doing that would require a different calculation. If we treat the paintbrush as a frame, then we do not have to write any additional code. 
                 - 3. Next Steps
-                  - Thomas: Jeff and I were talking and think that we could begin work on this project now and potentially finish it. 
-                  - Team: [Begins work] 
+                 - Thomas: Jeff and I were talking and think that we could begin work on this project now and potentially finish it. 
+                 - Team: [Begins work] 
             </markdown>
             <div class=my-v-spacer></div>
             <!-- Source Code -->
@@ -113,7 +113,7 @@
         <div class=my-center-spacer></div>
         <!-- The Reference Card -->
         <div @mouseenter="onHover" @mouseleave="onHoverOff" style="display: flex; margin-top: 2rem;">
-            <column class="hover-helper" v-bind:class="{hovered:hoverOn}">
+            <column class="hover-helper" v-bind:class="{hovered:hoverOn}" align-h=left>
                 <column class=my-reference-card v-bind:class="{hovered:hoverOn}" align-h=left shadow=2 background-color=white>
                     <a href="#task-allocation">Team Member Task Allocation</a>
                     <a href="#meeting-log">Meeting Log</a>
@@ -149,9 +149,15 @@ export default {
 </script>
 <style scoped lang="css">
     .my-container {
-        padding: 2rem 3rem;
-        --reference-width: 19rem;
+        --padding: 3rem;
+        --within-padding-bounds: calc(var(--padding) / 2);
         --hover-out-distace: 4rem;
+        --reference-width: 19rem;
+        --negative-reference-width: calc(var(--reference-width) * -1);
+        --total-hover-out-width: calc(var(--reference-width) + var(--hover-out-distace));
+        --no-hover-reference-position: calc(var(--negative-reference-width) * 0.79);
+        --mobile-no-hover-reference-position: calc(var(--negative-reference-width) + var(--within-padding-bounds));
+        padding: 2rem var(--padding);
     }
     .my-content {
         padding: 2rem 3rem;
@@ -176,14 +182,31 @@ export default {
         transition-duration: 0.5s;
         transition-timing-function: ease-out;
         position: relative;
-        left: calc(var(--reference-width) * -0.79);
+        left: var(--no-hover-reference-position);
     }
     .my-reference-card.hovered {
-        left: 0; /* var(--reference-width);*/
+        left: 0;
+        margin-left: var(--hover-out-distace);
     }
     .hover-helper {
-        width: calc(var(--reference-width) + var(--hover-out-distace));
+        width: var(--total-hover-out-width);
         position: fixed;
         left: 0;
+    }
+    @media only screen and (max-width: 768px) {
+        .my-reference-card {
+            left: var(--mobile-no-hover-reference-position);
+        }
+        .my-reference-card.hovered {
+            margin-left: var(--within-padding-bounds);
+        }
+        .my-content{
+            width: fit-content;
+            padding: 0;
+        }
+        >>> ul {
+            padding-left: 1em;
+        }
+        
     }
 </style>
