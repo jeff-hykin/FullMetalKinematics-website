@@ -114,13 +114,16 @@
         <!-- The Reference Card -->
         <div @mouseenter="onHover" @mouseleave="onHoverOff" style="display: flex; margin-top: 2rem;">
             <column class="hover-helper" v-bind:class="{hovered:hoverOn}" align-h=left>
-                <column class=my-reference-card v-bind:class="{hovered:hoverOn}" align-h=left shadow=2 background-color=white>
-                    <a href="#task-allocation">Team Member Task Allocation</a>
-                    <a href="#meeting-log">Meeting Log</a>
-                    <a target="_blank" href="https://github.tamu.edu/FullMetalKinematics/Project1">Source Code</a>
-                    <a href="#how-to-compile-and-run">How to Compile/Run</a>
-                    <a href="#screenshots">Screenshots</a>
-                    <a target="_blank" href="https://drive.google.com/open?id=0Bz6cPkDulveZdHcweGo0U2xKV1lwNUhhd09QVVM0QW42My1J">Report</a>
+                <column class=my-reference-card v-bind:class="{hovered:hoverOn}" align-h=left shadow=2 background-color=white >
+                    <column align-h=left>
+                        <a href="#task-allocation">Team Task Allocation</a>
+                        <a href="#meeting-log">Meeting Log</a>
+                        <a target="_blank" href="https://github.tamu.edu/FullMetalKinematics/Project1">Source Code</a>
+                        <a href="#how-to-compile-and-run">How to Compile/Run</a>
+                        <a href="#screenshots">Screenshots</a>
+                        <a target="_blank" href="https://drive.google.com/open?id=0Bz6cPkDulveZdHcweGo0U2xKV1lwNUhhd09QVVM0QW42My1J">Report</a>
+                    </column>
+                    <h6 style='transform: translateX(9rem) translateY(-4.2rem) rotate(90deg);'>Table of Contents</h6>
                 </column>
             </column>
         </div>
@@ -149,15 +152,15 @@ export default {
 </script>
 <style scoped lang="css">
     .my-container {
-        --padding: 3rem;
-        --within-padding-bounds: calc(var(--padding) / 2);
+        --page-padding: 3rem;
+        --within-padding-bounds: calc(var(--page-padding) / 2);
         --hover-out-distace: 4rem;
-        --reference-width: 19rem;
+        --reference-width: 17rem;
         --negative-reference-width: calc(var(--reference-width) * -1);
         --total-hover-out-width: calc(var(--reference-width) + var(--hover-out-distace));
         --no-hover-reference-position: calc(var(--negative-reference-width) * 0.79);
         --mobile-no-hover-reference-position: calc(var(--negative-reference-width) + var(--within-padding-bounds));
-        padding: 2rem var(--padding);
+        padding: 2rem var(--page-padding);
     }
     .my-content {
         padding: 2rem 3rem;

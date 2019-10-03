@@ -19,7 +19,7 @@
             </column>
         </row>
         <!-- Projects -->
-        <row class=card-container align-h=space-between :wrap=true width=100vw margin=2rem>
+        <row class=card-container align-h=space-evenly :wrap=true width=100vw margin=2rem>
             <!-- Project1 Summary -->
             <b-card class=project-card title="Project 1: Forward Kinematics" sub-title="2D robot arms">
                 <b-card-text></b-card-text>

@@ -38,6 +38,10 @@ export default {
   }
 }
 
+body {
+    background-color: whitesmoke;
+}
+
 .title {
   text-align: center;
 }
