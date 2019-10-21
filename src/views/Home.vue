@@ -31,13 +31,13 @@
                 </router-link>
             </b-card>
             <!-- Project2 Summary -->
-            <!-- <b-card class="project-card" style="align-self: flex-start" title="Forward Kinematics" sub-title="2D robot arms">
+            <b-card class="project-card" style="align-self: flex-start" title="Inverse Kinematics" sub-title="2D robot arms">
                 <b-card-text></b-card-text>
                 <b-card-text>
-                In this project, we used Python3 and Qt canvas. We created a robot arm of 3 linkages with individual controll of each arm, and the ability to draw at the tip of the final linkage
+                In this project, we continued using Python3 and Qt canvas. We use inverse Kinematics to create a robot arm to follow a particular point.
                 </b-card-text>
-                <router-link to="/Projects/project1" class="card-link">Open Project</router-link>
-            </b-card> -->
+                <router-link to="/Projects/project2" class="card-link">Open Project</router-link>
+            </b-card>
         </row>
     </column>
 </template>
