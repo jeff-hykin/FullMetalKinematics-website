@@ -3,6 +3,8 @@
         <!-- Content -->
         <div class=my-center-spacer></div>
         <column class=my-content align-h=left flex-grow=3>
+            <robot>
+            </robot>
             <!-- Task Allocation -->
             <markdown id=task-allocation>
                 # Task Allocation
@@ -20,8 +22,7 @@
                 
                 
                 #### Meeting 1
-                - 1. Discuss Website Choices 
-                 - Thomas: The main website should be very static as it is primarily a directory. 
+                - Stuff
                 
             </markdown>
             <div class=my-v-spacer></div>
@@ -85,7 +86,10 @@
     </row>
 </template>
 <script>
+import Robot from './Robot'
+
 export default {
+    components: {Robot},
     data: ()=>({
         hoverOn: true,
     }),
@@ -105,7 +109,7 @@ export default {
     }
 }
 </script>
-<style scoped lang="css">
+<style scoped>
     .my-container {
         --page-padding: 3rem;
         --within-padding-bounds: calc(var(--page-padding) / 2);

@@ -21,35 +21,64 @@
         <!-- Projects -->
         <row class=card-container align-h=space-evenly :wrap=true width=100vw margin=2rem>
             <!-- Project1 Summary -->
-            <b-card class=project-card title="Project 1: Forward Kinematics" sub-title="2D robot arms">
-                <b-card-text></b-card-text>
-                <b-card-text>
+            <column class=project-card>
+                <h6>Project 1: Forward Kinematics</h6>
+                <p>
                     In this project, we used Python3 and Qt canvas. We created a robot arm of 3 linkages with individual controll of each arm, and the ability to draw at the tip of the final linkage
-                </b-card-text>
+                </p>
                 <router-link to=/Projects/project1 class=card-link>
                     Open Project
                 </router-link>
-            </b-card>
+            </column>
             <!-- Project2 Summary -->
-            <b-card class="project-card" style="align-self: flex-start" title="Inverse Kinematics" sub-title="2D robot arms">
-                <b-card-text></b-card-text>
-                <b-card-text>
-                In this project, we continued using Python3 and Qt canvas. We use inverse Kinematics to create a robot arm to follow a particular point.
-                </b-card-text>
-                <router-link to="/Projects/project2" class="card-link">Open Project</router-link>
-            </b-card>
+            <column class=project-card>
+                <h6>Project 2: Inverse Kinematics</h6>
+                <p>
+                    In this project, we continued using Python3 and Qt canvas. We use inverse Kinematics to create a robot arm to follow a particular point.
+                </p>
+                <router-link to=/Projects/project2 class=card-link>
+                    Open Project
+                </router-link>
+            </column>
         </row>
     </column>
 </template>
+<script>
+    import Card from '../components/Card'
+    import Column from '../components/Column'
+    import Row from '../components/Row'
+    export default {
+        components: {
+            Card,
+            Column, Row 
+        }
+    }
+</script>
 <style lang="scss" scoped>
 .card-container {
     max-width: 68rem;
 }
 .project-card {
     max-width: 30rem;
+    height: 15rem;
+    justify-content: space-around;
     text-align: left;
     margin: 1.1rem 1.7rem;
+    background: white;
+    border: solid lightgray 1px;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    align-items: flex-start;
+    h1,h2,h3,h4,h5,h6 {
+        margin-bottom: 1rem;
+    }
+    a {
+        margin-top: 1rem;
+        margin-bottom: 0.2rem;
+        justify-self: flex-end;
+    }
 }
+
 .my-title {
     margin-top: 2rem;
     font-size: 39pt;
