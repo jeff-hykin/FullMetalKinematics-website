@@ -22,7 +22,14 @@
                 
                 
                 #### Meeting 1
-                - Stuff
+                - 1. Discuss what has been done
+                  - Jeff: I have updated the Website
+                  - Jon: I have derived the equations we should use for different cases
+                - 2. Discuss plan
+                  - Thomas: Let's discuss breakdown of what is left
+                  - Mitchell: we can base this project on the last one and add the new implementations
+                  - Alejandro: We can implement equations in code tomorrow for the next meeting. Created repo for this project
+                  - Thomas: Sounds good. I will go ahead and add the new buttons then before tomorrow.
                 
             </markdown>
             <div class=my-v-spacer></div>
