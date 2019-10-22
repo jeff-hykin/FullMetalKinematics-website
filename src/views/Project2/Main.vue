@@ -29,7 +29,7 @@
             <!-- Source Code -->
             <markdown id=source-code>
                 # Source Code
-                <a target="_blank" href="https://github.tamu.edu/FullMetalKinematics/Project2">View it here</a>
+                <a target="_blank" :href="sourceCodeLink">View it here</a>
             </markdown>
             <div class=my-v-spacer></div>
             <!-- How to Compile and Run -->
@@ -63,53 +63,31 @@
             <!-- Report -->
             <markdown id=report>
                 # Report
-                <!-- <a target="_blank" href="https://drive.google.com/open?id=0Bz6cPkDulveZdHcweGo0U2xKV1lwNUhhd09QVVM0QW42My1J">View it here</a> -->
+                <a target="_blank" :href="reportLink">View it here</a>
             </markdown>
         </column>
         <div class=my-center-spacer></div>
-        <!-- The Reference Card -->
-        <div @mouseenter="onHover" @mouseleave="onHoverOff" style="display: flex; margin-top: 2rem;">
-            <column class="hover-helper" v-bind:class="{hovered:hoverOn}" align-h=left>
-                <column class=my-reference-card v-bind:class="{hovered:hoverOn}" align-h=left shadow=2 background-color=white >
-                    <column align-h=left>
-                        <a href="#task-allocation">Team Task Allocation</a>
-                        <a href="#meeting-log">Meeting Log</a>
-                        <a target="_blank" href="https://github.tamu.edu/FullMetalKinematics/Project2">Source Code</a>
-                        <a href="#how-to-compile-and-run">How to Compile/Run</a>
-                        <a href="#screenshots">Screenshots</a>
-                        <!-- <a target="_blank" href="https://drive.google.com/open?id=0Bz6cPkDulveZdHcweGo0U2xKV1lwNUhhd09QVVM0QW42My1J">Report</a> -->
-                    </column>
-                    <h6 style='transform: translateX(9rem) translateY(-4.2rem) rotate(90deg);'>Table of Contents</h6>
-                </column>
-            </column>
-        </div>
+        <table-of-contents>
+            <a href="#task-allocation">Team Task Allocation</a>
+            <a href="#meeting-log">Meeting Log</a>
+            <a target="_blank" :href="sourceCodeLink">Source Code</a>
+            <a href="#how-to-compile-and-run">How to Compile/Run</a>
+            <a href="#screenshots">Screenshots</a>
+            <a target="_blank" :href="reportLink">Report</a>
+        </table-of-contents>
     </row>
 </template>
 <script>
-import Robot from './Robot'
-
+import TableOfContents from '../../components/TableOfContents'
 export default {
-    components: {Robot},
-    data: ()=>({
-        hoverOn: true,
-    }),
-    mounted() {
-        // show the element as hovered for the first second
-        setTimeout(()=>{
-            this.hoverOn = false
-        }, 1000)
-    },
-    methods: {
-        onHover() {
-            this.hoverOn = true
-        },
-        onHoverOff() {
-            this.hoverOn = false
-        }
-    }
+    components: {TableOfContents},
+    data: _=>({
+        sourceCodeLink: "https://github.tamu.edu/FullMetalKinematics/Project2",
+        reportLink: ""
+    })
 }
 </script>
-<style scoped>
+<style scoped lang="css">
     .my-container {
         --page-padding: 3rem;
         --within-padding-bounds: calc(var(--page-padding) / 2);
@@ -134,40 +112,5 @@ export default {
         flex-shrink: 2;
         width: 50vw;
         min-width: 0;
-    }
-    .my-reference-card {
-        border-radius: .5rem;
-        width: var(--reference-width);
-        padding: 1rem 2rem;
-        transition-property: all;
-        transition-duration: 0.5s;
-        transition-timing-function: ease-out;
-        position: relative;
-        left: var(--no-hover-reference-position);
-    }
-    .my-reference-card.hovered {
-        left: 0;
-        margin-left: var(--hover-out-distace);
-    }
-    .hover-helper {
-        width: var(--total-hover-out-width);
-        position: fixed;
-        left: 0;
-    }
-    @media only screen and (max-width: 768px) {
-        .my-reference-card {
-            left: var(--mobile-no-hover-reference-position);
-        }
-        .my-reference-card.hovered {
-            margin-left: var(--within-padding-bounds);
-        }
-        .my-content {
-            width: fit-content;
-            padding: 0;
-        }
-        >>> ul {
-            padding-left: 1em;
-        }
-        
     }
 </style>
