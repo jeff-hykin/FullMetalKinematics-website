@@ -84,8 +84,19 @@ export default Vue.component("markdown", {
 })
 
 </script>
-<style scoped lang="css">
->>> img {
-    max-width: 100%;
-}
+<style scoped lang="scss">
+::v-deep {
+    img {
+        max-width: 100%;
+    }
+    li {
+        margin-left: 2rem;
+    }
+    h1 {
+        font-size: 3.84rem;
+    }
+    h4 {
+        font-size: 1.92rem;
+    }
+} 
 </style>
