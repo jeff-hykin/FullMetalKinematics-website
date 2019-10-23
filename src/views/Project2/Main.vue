@@ -30,6 +30,13 @@
                   - Mitchell: we can base this project on the last one and add the new implementations
                   - Alejandro: We can implement equations in code tomorrow for the next meeting. Created repo for this project
                   - Thomas: Sounds good. I will go ahead and add the new buttons then before tomorrow.
+
+                #### Meeting 2
+                - 1. Discuss work plan
+                  - Thomas: Added the buttons. Let's get someone to do the callback functions and the other two of us can implement the functions.
+                  - Mitchell: I can do the callback functions
+                - 2. Debugging and other features
+                  - Mitchell: Let me try to implement smoothing for arm transitions
                 
             </markdown>
             <div class=my-v-spacer></div>
