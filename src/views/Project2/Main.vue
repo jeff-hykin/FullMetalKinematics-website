@@ -9,11 +9,11 @@
             <markdown id=task-allocation>
                 # Task Allocation
                 <br>
-                <br>**Thomas McDonald:** 
-                <br>**Jon Williamson:** Handle equations
+                <br>**Thomas McDonald:** Python Development
+                <br>**Jon Williamson:** Equation Derivation
                 <br>**Jeff Hykin:** Website development, link code
-                <br>**Alejandro Londono:** 
-                <br>**Mitchell Eldridge:** 
+                <br>**Alejandro Londono:** Python Development
+                <br>**Mitchell Eldridge:** Python Development
             </markdown>
             <div class=my-v-spacer></div>
             <!-- Meeting Log -->
@@ -71,7 +71,8 @@
                 # Screenshots
                 <br>
                 <br>
-                <!-- <img width="1362" alt="image1" src="https://user-images.githubusercontent.com/17692058/66019087-68c62c00-e4a7-11e9-90e6-c347ebdfa31f.png"> -->
+                <img src="./pic1.jpeg" alt="robot-arm-picture">
+                <img src="./pic2.jpeg" alt="robot-arm-picture">
             </markdown>
             <div class=my-v-spacer></div>
             <!-- Report -->
@@ -97,7 +98,7 @@ export default {
     components: {TableOfContents},
     data: _=>({
         sourceCodeLink: "https://github.tamu.edu/FullMetalKinematics/Project2",
-        reportLink: ""
+        reportLink: "https://drive.google.com/file/d/1zBTuWgYPHpoq7rfI42atSO1dsLU0g5_f/view?usp=sharing"
     })
 }
 </script>
