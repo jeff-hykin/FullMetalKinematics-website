@@ -21,8 +21,6 @@ Vue.use(VueSimpleMarkdown)
 
 import Markdown from '@/components/Markdown'
 
-import * as shadow from 'vue-shadow-dom'
-Vue.use(shadow)
 
 Vue.config.productionTip = false
 
