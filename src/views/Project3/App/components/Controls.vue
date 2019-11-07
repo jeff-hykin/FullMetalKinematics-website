@@ -95,6 +95,7 @@ export default {
     transition: all 250ms ease-out;
     background: white;
     z-index: 999999;
+    overflow: auto;
 }
 .settings-panel > h1 {
     transition: all 250ms ease-out;
