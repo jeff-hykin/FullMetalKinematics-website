@@ -2,7 +2,7 @@
 <div>
     <h1>Robots</h1>
     <table align='center'>
-        <tr v-for="bot in robots" :key='bot.id'>
+        <tr v-for="bot in global.robots" :key='bot.id'>
             <td>Bot {{ bot.id.substring(0,4) }}</td>
             <td><button @click='removeBot(bot)' class='delete'>DELETE</button></td>
             <td>X: <input :id="`${bot.id}-x`" type='number' class='small-input' :placeholder="bot.x"></td>
@@ -28,11 +28,11 @@ export default {
     },
     methods: {
         removeBot(robot) {
-            let index = this.robots.findIndex(e=>e.id == robot.id)
-            this.robots.splice(index, 1)
+            let index = this.global.robots.findIndex(e=>e.id == robot.id)
+            this.global.robots.splice(index, 1)
         },
         addBot() {
-            this.robots.push(new Robot(this.robotStartLocation[0], this.robotStartLocation[0], ...this.initialKMatrix))
+            this.global.robots.push(new Robot(this.global.robotStartLocation[0], this.global.robotStartLocation[0], ...this.global.initialKMatrix))
         },
         getKVal(K, k1, k2) {
             return K.subset(index(k1, k2))

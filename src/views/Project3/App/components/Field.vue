@@ -1,13 +1,13 @@
 <template>
-    <div id='field' @click='addLight' :style="{ minWidth: `${this.fieldWidth}${this.units}`, minHeight: `${this.fieldHeight}${this.units}`, maxWidth: `${this.fieldWidth}${this.units}`, maxHeight: `${this.fieldHeight}${this.units}` }">
+    <div id='field' @click='addLight' :style="{ minWidth: `${this.global.fieldWidth}${this.global.units}`, minHeight: `${this.global.fieldHeight}${this.global.units}`, maxWidth: `${this.global.fieldWidth}${this.global.units}`, maxHeight: `${this.global.fieldHeight}${this.global.units}` }">
         <!-- Lights -->
         <div class='light' v-for='(light, index) in lights' 
             :key="light.id" @click.stop='removeLight(index)' 
-            :style="{ position: 'absolute', left: light.x-lightSize + 'px', bottom: light.y-lightSize + 'px' }">
+            :style="{ position: 'absolute', left: light.x-global.lightSize + 'px', bottom: light.y-global.lightSize + 'px' }">
         </div>
 
         <!-- Robots -->
-        <div v-for='robot in robots' :key='robot.id'>
+        <div v-for='robot in global.robots' :key='robot.id'>
             <div class='wheel' 
                 :key="robot.id+3"  
                 :style="{ position: 'absolute', left: robot.getWheelPositions()[0].x-5 + 'px', bottom: robot.getWheelPositions()[0].y-5 + 'px' }">
@@ -52,7 +52,7 @@ export default {
     },
     methods: {
         addLight(event) {
-            this.lights.push(new Light(event.clientX-10, this.fieldHeight-event.clientY+10))
+            this.lights.push(new Light(event.clientX-10, this.global.fieldHeight-event.clientY+10))
         },
         removeLight(index) {
             this.lights.splice(index, 1)
@@ -60,10 +60,10 @@ export default {
         antenna(senPos, bodyPos, color, thickness) {
             // sensor pos
             let x1 = senPos.x + 2.5
-            let y1 = this.fieldHeight - senPos.y
+            let y1 = this.global.fieldHeight - senPos.y
             // body pos
             let x2 = bodyPos.x
-            let y2 = this.fieldHeight - bodyPos.y
+            let y2 = this.global.fieldHeight - bodyPos.y
             // distance
             let length = Math.sqrt(((x2-x1) * (x2-x1)) + ((y2-y1) * (y2-y1)))
             // center
@@ -92,14 +92,14 @@ export default {
     created() {
         // the update loop
         setInterval(()=>{
-            for(let robot of this.robots) {
+            for(let robot of this.global.robots) {
                 // get the new robot position
                 robot.updateHolisticMat(1, this.lights)
                 // teleport the robot when it goes out of bounds
-                if(robot.x < 0                     ) { robot.updateXY( this.fieldWidth, robot.y               ) }
-                if(robot.y < 0                     ) { robot.updateXY( robot.x             , this.fieldHeight ) }
-                if(robot.x > this.fieldWidth  ) { robot.updateXY( 0                   , robot.y               ) }
-                if(robot.y > this.fieldHeight ) { robot.updateXY( robot.x             , 0                     ) }
+                if(robot.x < 0                     ) { robot.updateXY( this.global.fieldWidth, robot.y               ) }
+                if(robot.y < 0                     ) { robot.updateXY( robot.x             , this.global.fieldHeight ) }
+                if(robot.x > this.global.fieldWidth  ) { robot.updateXY( 0                   , robot.y               ) }
+                if(robot.y > this.global.fieldHeight ) { robot.updateXY( robot.x             , 0                     ) }
             }
         }, this.updateInterval)
     }

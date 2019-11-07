@@ -1,8 +1,8 @@
 <template>
-  <div id="internal-app">
+  <row id="internal-app" width=100vw height=100vh>
     <Field class='half'></Field>
     <Controls class='half'></Controls>
-  </div>
+  </row>
 </template>
 
 <script>

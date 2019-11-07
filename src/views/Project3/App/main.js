@@ -17,12 +17,21 @@ let globalData = {
     // actual data
     robots: [],
 }
+let globalDataModifier
 Vue.mixin({
-    data: ()=>globalData,
+    data() {
+        globalDataModifier = this
+        return {global: globalData}
+    },
 })
 
 export default new Vue({
     methods: {},
-    created() {},
+    created() {
+        setInterval(() => {
+            globalDataModifier.global.fieldHeight = this.$el.clientHeight
+            globalDataModifier.global.fieldWidth  = this.$el.clientWidth / 2
+        }, 1000);
+    },
     render: h => h(App),
 })
