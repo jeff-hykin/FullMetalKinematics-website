@@ -3,7 +3,7 @@
         <!-- Lights -->
         <div class='light' v-for='(light, index) in lights' 
             :key="light.id" @click.stop='removeLight(index)' 
-            :style="{ position: 'absolute', left: light.x-global.lightSize + 'px', bottom: light.y-global.lightSize + 'px' }">
+            :style="{ position: 'absolute', left: light.x + 'px', bottom: light.y-global.lightSize + 'px' }">
         </div>
         
         <ui-button class=clear-lights-btn color=primary @click='clearLights'>Clear Lights</ui-button>

@@ -13,7 +13,7 @@ let globalData = {
     updateInterval: 50, // every 20 miliseconds
     robotStartLocation: [150,150],
     initialKMatrix: [1, 0, 0, 1],
-    lightSize: 7.5,
+    lightSize: 15,
     panelHiddenPercent: .7,
     // actual data
     robots: [],
