@@ -1,5 +1,6 @@
 <template>
-  <div id='field' @click='addLight'>
+    <div id='field' @click='addLight' :style="{ minWidth: `${this.fieldWidth}${this.units}`, minHeight: `${this.fieldHeight}${this.units}`, maxWidth: `${this.fieldWidth}${this.units}`, maxHeight: `${this.fieldHeight}${this.units}` }">
+        <!-- Lights -->
         <div class='light' v-for='light in lights' 
             :key="light.id" @click.stop='removeLight(light.id)' 
             :style="{ position: 'absolute', left: light.x-7.5 + 'px', bottom: light.y-7.5 + 'px' }">
@@ -35,28 +36,23 @@
             <div :id='`${robot.id}-sen2-attachment`' :style="antenna(robot.getSensorPositions()[1], robot, 'white', 2)"></div>
 
         </div>
-  </div>
+    </div>
 </template>
 
 <script>
 import Light from '../scripts/Light'
 
+
 export default {
     name: 'Field',
-    data: function () {
-        return {
-            lights: []
-        }
-    },
+    data: ()=>({
+        lights: [],
+    }),
     computed: {
-        robots: function () {
-            return this.$root.robots
-        }
     },
     methods: {
         addLight(event) {
-            this.lights.push(new Light(event.clientX-10, 600-event.clientY+10))
-            // console.log('X:', event.clientX-10, 'Y:', 600-event.clientY+10)
+            this.lights.push(new Light(event.clientX-10, this.fieldHeight-event.clientY+10))
         },
         removeLight(id) {
             let index = -1
@@ -71,10 +67,10 @@ export default {
         antenna(senPos, bodyPos, color, thickness) {
             // sensor pos
             let x1 = senPos.x + 2.5
-            let y1 = 600 - senPos.y
+            let y1 = this.fieldHeight - senPos.y
             // body pos
             let x2 = bodyPos.x
-            let y2 = 600 - bodyPos.y
+            let y2 = this.fieldHeight - bodyPos.y
             // distance
             let length = Math.sqrt(((x2-x1) * (x2-x1)) + ((y2-y1) * (y2-y1)))
             // center
@@ -101,23 +97,18 @@ export default {
         }
     },
     created() {
-        setInterval(function () {
+        // the update loop
+        setInterval(()=>{
             for(let robot of this.robots) {
+                // get the new robot position
                 robot.updateHolisticMat(1, this.lights)
-                if(robot.x < 0) {
-                    robot.updateXY(800, robot.y)
-                }
-                if(robot.y < 0) {
-                    robot.updateXY(robot.x, 600)
-                }
-                if(robot.x > 800) {
-                    robot.updateXY(0, robot.y)
-                }
-                if(robot.y > 600) {
-                    robot.updateXY(robot.x, 0)
-                }
+                // teleport the robot when it goes out of bounds
+                if(robot.x < 0                     ) { robot.updateXY( this.fieldWidth, robot.y               ) }
+                if(robot.y < 0                     ) { robot.updateXY( robot.x             , this.fieldHeight ) }
+                if(robot.x > this.fieldWidth  ) { robot.updateXY( 0                   , robot.y               ) }
+                if(robot.y > this.fieldHeight ) { robot.updateXY( robot.x             , 0                     ) }
             }
-        }.bind(this), 20)
+        }, this.updateInterval)
     }
 }
 </script>
@@ -125,10 +116,6 @@ export default {
 <style>
 #field {
     position: relative;
-    min-width: 800px;
-    min-height: 600px;
-    max-width: 800px;
-    max-height: 600px;
     background-color: black;
 }
 

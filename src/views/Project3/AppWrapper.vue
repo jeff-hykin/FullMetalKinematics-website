@@ -1,33 +1,25 @@
 <template>
-  <div ref=appWrapper>
-      
-  </div>
+    <div class=fullscreen>
+        <div ref=appWrapper>
+        </div>
+    </div>
 </template>
 
 <script>
 import Main from './App/main'
 export default {
     mounted() {
-        Main.$mount('#app-wrapper')
-        setTimeout(() => {
-            let div = this.$refs.appWrapper
-            // create a shadow dom
-            let shadow = div.attachShadow({mode: 'open'})
-            let element = document.getElementById('app-wrapper')
-            if (!element) {
-                element = document.createElement('div')
-                element.id = 'app-wrapper'
-            }
-            div.appendChild(element)
-            
-            let internalApp = document.getElementById('internal-app')
-            shadow.appendChild(internalApp)
-            shadow.appendChild(element)
-        }, 1)
+        this.main = Main.$mount(this.$refs.appWrapper)
     }
 }
 </script>
 
 <style>
-
+    .fullscreen {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top:0;
+        left: 0;
+    }
 </style>

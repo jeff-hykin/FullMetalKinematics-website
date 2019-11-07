@@ -4,14 +4,14 @@
     <table align='center'>
         <tr v-for="bot in robots" :key='bot.id'>
             <td>Bot {{ bot.id.substring(0,4) }}</td>
-            <td><button @click='removeBot(bot.id)' class='delete'>DELETE</button></td>
-            <td>X: <input :id="`${bot.id}-x`" type='number' class='small-input' max='800' min='0' :placeholder="bot.x"></td>
-            <td>Y: <input :id="`${bot.id}-y`" type='number' class='small-input' max='600' min='0' :placeholder="bot.y"></td>
+            <td><button @click='removeBot(bot)' class='delete'>DELETE</button></td>
+            <td>X: <input :id="`${bot.id}-x`" type='number' class='small-input' :placeholder="bot.x"></td>
+            <td>Y: <input :id="`${bot.id}-y`" type='number' class='small-input' :placeholder="bot.y"></td>
             <td>k11: <input type='number' class='small-input' step='0.5' max='10' min='-10' :value="getKVal(bot.K, 0, 0)" @input='setKVal(bot.id,0,0,$event.target.value)'></td>
             <td>k12: <input type='number' class='small-input' step='0.5' max='10' min='-10' :value="getKVal(bot.K, 0, 1)" @input='setKVal(bot.id,0,1,$event.target.value)'></td>
             <td>k21: <input type='number' class='small-input' step='0.5' max='10' min='-10' :value="getKVal(bot.K, 1, 0)" @input='setKVal(bot.id,1,0,$event.target.value)'></td>
             <td>k22: <input type='number' class='small-input' step='0.5' max='10' min='-10' :value="getKVal(bot.K, 1, 1)" @input='setKVal(bot.id,1,1,$event.target.value)'></td>
-            <td><button @click='saveXY(bot.id)'>Save XY</button></td>
+            <td><button @click='saveXY(bot)'>Save XY</button></td>
         </tr>
     </table>
     <button @click='addBot'>Add Robot</button>
@@ -21,42 +21,31 @@
 
 <script>
 import { index } from 'mathjs'
+import Robot from "../scripts/Robot"
 
 export default {
     name: 'Controls',
     computed: {
-        robots: function () {
-            return this.$root.robots
-        }
     },
     methods: {
-        removeBot(id) {
-            this.$root.removeRobot(id)
+        removeBot(robot) {
+            let index = this.robots.findIndex(e=>e.id == robot.id)
+            this.robots.splice(index, 1)
         },
         addBot() {
-            this.$root.addRobot(50, 50, 1, 0, 0, 1)
+            this.robots.push(new Robot(50, 50, 1, 0, 0, 1))
+            console.log(`this.robots is:`,this.robots)
         },
         getKVal(K, k1, k2) {
             return K.subset(index(k1, k2))
         },
-        setKVal(id, k1, k2, newVal) {
-            this.$root.updateRobotKVal(id, k1, k2, newVal)
+        setKVal(robot, k1, k2, newVal) {
+            robot.K.subset(index(k1, k2), newVal)
         },
-        setXY(id, x, y) {
-            this.$root.updateRobotXY(id, x, y)
-        },
-        saveXY(id){
-                        
-            let x = document.getElementById(`${id}-x`).value //pass id-x as param
-            let y = document.getElementById(`${id}-y`).value //pass id-y as param 
-            // let k11 = document.getElementById()
-            // let k12 = document.getElementById()
-            // let k21 = document.getElementById()
-            // let k22 =  document.getElementById()
-
-            // this.updateRobotXY(id, x, y)
-            this.setXY(id, x, y)
-
+        saveXY(bot) {
+            let x = document.getElementById(`${bot.id}-x`).value //pass id-x as param
+            let y = document.getElementById(`${bot.id}-y`).value //pass id-y as param 
+            bot.updateXY(x, y)
         }
     }
 }
