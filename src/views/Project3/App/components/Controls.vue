@@ -15,8 +15,8 @@
         <column >
             K:
         </column>
-        <column >
-            <row id-for-deep-styling-fja093435090>
+        <column id-for-deep-styling-fja093435090>
+            <row>
                 <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 0, 0)" @input='setKVal(bot, 0,0,$event)'/>
                 <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 0, 1)" @input='setKVal(bot, 0,1,$event)'/>
             </row>
@@ -31,7 +31,7 @@
             <ui-button color=primary @click='saveXY(bot)'>Save Coordinates</ui-button>
         </column>
     </row>
-    <ui-button color=primary @click='addBot'>Add Robot</ui-button>
+    <ui-button :style='{minHeight:"2rem", marginBottom:"2rem"}' color=primary @click='addBot'>Add Robot</ui-button>
 </column>
 </template>
 
