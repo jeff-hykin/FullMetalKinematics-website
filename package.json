@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prod-serve": "serve -s dist"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
@@ -14,6 +15,7 @@
     "good-vue": "^1.1.6",
     "keen-ui": "^1.2.0",
     "mathjs": "^6.2.3",
+    "serve": "^11.2.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vue-simple-markdown": "^1.1.1"
