@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "prod-serve": "serve -s dist"
+    "prod-serve": "serve -s dist -l 8081"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
