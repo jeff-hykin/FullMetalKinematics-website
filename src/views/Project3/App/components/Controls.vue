@@ -5,9 +5,9 @@
         <column >
             <td>Bot {{ bot.id.substring(0,4) }}</td>
         </column>
-        <column >
-            <td>X: <input :id="`${bot.id}-x`" type='number' class='small-input' :placeholder="Math.floor(bot.x)"></td>
-            <td>Y: <input :id="`${bot.id}-y`" type='number' class='small-input' :placeholder="Math.floor(bot.y)"></td>
+        <column min-width=max-content>
+            <td>X: <input :id="`${bot.id}-x`" type='number' class='small-input' @keydown="onEnter(bot, $event)" :placeholder="Math.floor(bot.x)"></td>
+            <td>Y: <input :id="`${bot.id}-y`" type='number' class='small-input' @keydown="onEnter(bot, $event)" :placeholder="Math.floor(bot.y)"></td>
         </column>
         <column >
             K:
@@ -22,8 +22,11 @@
                 <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 1, 1)" @input='setKVal(bot,1,1,$event)'/>
             </row>
         </column>
-        <ui-button color=red class='delete' @click='removeBot(bot)'>DELETE</ui-button>
-        <!-- <td><button @click='saveXY(bot)'>Save XY</button></td> -->
+        <column >
+            <ui-button color=red class='delete' @click='removeBot(bot)'>DELETE</ui-button>
+            <row height=1rem />
+            <ui-button color=primary @click='saveXY(bot)'>Save Coordinates</ui-button>
+        </column>
     </row>
     <ui-button color=primary @click='addBot'>Add Robot</ui-button>
 </column>
@@ -58,6 +61,11 @@ export default {
             let x = document.getElementById(`${bot.id}-x`).value //pass id-x as param
             let y = document.getElementById(`${bot.id}-y`).value //pass id-y as param 
             bot.updateXY(x, y)
+        },
+        onEnter(bot, e) {
+            if (e.key == 'Enter') {
+                this.saveXY(bot)
+            }
         }
     },
     created() {
@@ -102,6 +110,7 @@ export default {
     padding: 0.5rem 1rem;
     margin: 1rem !important;
     width: fit-content;
+    /* min-width: 13rem; */
     background: whitesmoke;
 }
 .bot-control > * {
