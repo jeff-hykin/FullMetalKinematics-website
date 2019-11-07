@@ -8,13 +8,15 @@ Vue.config.productionTip = false
 let globalData = {
     // basically constants
     units: "px",
-    fieldHeight: 2000,
-    fieldWidth: 2800,
-    updateInterval: 50, // every 20 miliseconds
+    updateInterval: 50, // every 50 miliseconds
     robotStartLocation: [150,150],
     initialKMatrix: [1, 0, 0, 1],
     lightSize: 15,
     panelHiddenPercent: .7,
+    speed: 1,
+    // system updated vars
+    fieldHeight: 2000,
+    fieldWidth: 2800,
     // actual data
     robots: [],
 }

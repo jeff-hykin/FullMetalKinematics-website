@@ -101,7 +101,7 @@ export default {
         setInterval(()=>{
             for(let robot of this.global.robots) {
                 // get the new robot position
-                robot.updateHolisticMat(1, this.lights)
+                robot.updateHolisticMat(this.global.speed, this.lights)
                 // teleport the robot when it goes out of bounds
                 if(robot.x < 0                     ) { robot.updateXY( this.global.fieldWidth, robot.y               ) }
                 if(robot.y < 0                     ) { robot.updateXY( robot.x             , this.global.fieldHeight ) }

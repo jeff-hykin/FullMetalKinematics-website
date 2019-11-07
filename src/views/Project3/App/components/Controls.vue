@@ -1,6 +1,9 @@
 <template>
 <column id=panel shadow=3 :class="['settings-panel', {panelHover}]" :style="{transform: `translateX(${global.panelHiddenPercent*100}%)`}" align-v=top>
     <h1>Robots</h1>
+    <row padding=2rem>
+        <h6>Speed:</h6>  <row width=1rem /> <input step='0.2' type='number' v-model="global.speed">
+    </row>
     <row class=bot-control shadow=2 v-for="bot in global.robots" :key='bot.id'>
         <column >
             <td>Bot {{ bot.id.substring(0,4) }}</td>
