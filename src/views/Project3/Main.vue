@@ -67,9 +67,11 @@
             <!-- Source Code -->
             <markdown>
                 # Live Demo!
-                <router-link to=/Projects/project3/app>
-                    Open App
-                </router-link>
+                <div @click="openApp">
+                    <router-link to=/Projects/project3/app>
+                        Open App
+                    </router-link>
+                </div>
             </markdown>
             <div class=my-v-spacer></div>
             <!-- How to Compile and Run -->
@@ -122,7 +124,10 @@ export default {
     data: _=>({
         sourceCodeLink: "https://github.tamu.edu/FullMetalKinematics/Project3",
         reportLink: "https://docs.google.com/document/d/1V52VxGgUyUdT3qWPG7JEzQBGscHuqFzETINFyLEwn48"
-    })
+    }),
+    methods: {
+        openApp: ()=>setTimeout(()=>document.location.reload(true), 500)
+    }
 }
 </script>
 <style scoped lang="css">

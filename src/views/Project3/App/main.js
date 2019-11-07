@@ -11,7 +11,7 @@ let globalData = {
     fieldHeight: 2000,
     fieldWidth: 2800,
     updateInterval: 50, // every 20 miliseconds
-    robotStartLocation: [50,50],
+    robotStartLocation: [150,150],
     initialKMatrix: [1, 0, 0, 1],
     lightSize: 7.5,
     panelHiddenPercent: .7,
