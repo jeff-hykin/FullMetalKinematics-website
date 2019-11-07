@@ -39,7 +39,7 @@ export default new Vue({
             }
             globalDataModifier.global.fieldHeight = this.$el.clientHeight
             globalDataModifier.global.fieldWidth  = this.$el.clientWidth - shiftAmount
-        }, 1000);
+        }, 1000)
     },
     render: h => h(App),
 })

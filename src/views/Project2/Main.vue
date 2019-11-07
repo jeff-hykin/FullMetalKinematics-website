@@ -3,8 +3,6 @@
         <!-- Content -->
         <div class=my-center-spacer></div>
         <column class=my-content align-h=left flex-grow=3>
-            <robot>
-            </robot>
             <!-- Task Allocation -->
             <markdown id=task-allocation>
                 # Task Allocation

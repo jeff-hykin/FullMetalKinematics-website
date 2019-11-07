@@ -3,8 +3,6 @@
         <!-- Content -->
         <div class=my-center-spacer></div>
         <column class=my-content align-h=left flex-grow=3>
-            <robot>
-            </robot>
             <!-- Task Allocation -->
             <markdown id=task-allocation>
                 # Task Allocation
@@ -64,6 +62,14 @@
             <markdown id=source-code>
                 # Source Code
                 <a target="_blank" :href="sourceCodeLink">View it here</a>
+            </markdown>
+            <div class=my-v-spacer></div>
+            <!-- Source Code -->
+            <markdown>
+                # Live Demo!
+                <router-link to=/Projects/project3/app>
+                    Open App
+                </router-link>
             </markdown>
             <div class=my-v-spacer></div>
             <!-- How to Compile and Run -->

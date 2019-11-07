@@ -8,8 +8,21 @@
 <script>
 import Main from './App/main'
 export default {
+    methods: {
+        tryLoadingMain() {
+            if (this.$refs.appWrapper) {
+                this.main = Main.$mount(this.$refs.appWrapper)
+            }
+            if (!this.main) {
+                this.setupTimer()
+            }
+        },
+        setupTimer() {
+            setTimeout(this.tryLoadingMain, 500)
+        }
+    },
     mounted() {
-        this.main = Main.$mount(this.$refs.appWrapper)
+        this.setupTimer()
     }
 }
 </script>
