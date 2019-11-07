@@ -1,5 +1,5 @@
 <template>
-<column id=panel shadow=3 :class="['settings-panel', {panelHover}]" :style="{transform: `translateX(${global.panelHiddenPercent*100}%)`}" align-v=top>
+<column  id=panel shadow=3 :class="['settings-panel', {panelHover}]" :style="{transform: `translateX(${global.panelHiddenPercent*100}%)`}" align-v=top>
     <h1>Robots</h1>
     <row padding=2rem>
         <h6>Speed:</h6>  <row width=1rem /> <input step='0.2' type='number' v-model="global.speed">
@@ -16,7 +16,7 @@
             K:
         </column>
         <column >
-            <row >
+            <row id-for-deep-styling-fja093435090>
                 <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 0, 0)" @input='setKVal(bot, 0,0,$event)'/>
                 <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 0, 1)" @input='setKVal(bot, 0,1,$event)'/>
             </row>
@@ -129,6 +129,9 @@ export default {
     padding: 0 .7rem;
     width: 60px;
     min-width: fit-content;
+}
+[id-for-deep-styling-fja093435090] .ui-textbox__input {
+    width: 4rem;
 }
 
 tr {
