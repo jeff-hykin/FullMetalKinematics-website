@@ -133,6 +133,7 @@ export default {
     background-color: yellow;
     border-radius: 50%;
     display: inline-block;
+    box-shadow: 10px 10px 270px 59px rgb(232, 229, 116);
 }
 
 .robot {
