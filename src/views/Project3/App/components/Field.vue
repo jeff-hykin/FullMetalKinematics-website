@@ -83,7 +83,8 @@ export default {
                 left: `${cx}px`, 
                 top: `${cy}px`, 
                 width: `${length}px`,
-                transform: `rotate(${angle}deg)`
+                transform: `rotate(${angle}deg)`,
+                // transition: `all 250ms ease-out`,
             }
 
             return style
@@ -108,8 +109,10 @@ export default {
 
 <style>
 #field {
-    position: relative;
-    background-color: black;
+    position: fixed;
+    background-color: var(--grey-700);
+    left: 0;
+    top: 0;
 }
 
 .light {

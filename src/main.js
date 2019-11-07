@@ -2,13 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 
+
+// Baseline
+import 'css-baseline/css/3.css'
+
 // Lightweight non-global-css library
 import KeenUI from 'keen-ui'
 import 'keen-ui/dist/keen-ui.css'
 Vue.use(KeenUI)
-
-// Baseline
-import 'css-baseline/css/4.css'
 
 // Rows and Columns
 import GoodVue from 'good-vue'

@@ -1,20 +1,31 @@
 <template>
-<column class=settings-panel align-v=top>
+<column id=panel shadow=3 :class="['settings-panel', {panelHover}]" :style="{transform: `translateX(${global.panelHiddenPercent*100}%)`}" align-v=top>
     <h1>Robots</h1>
-    <table align='center'>
-        <tr v-for="bot in global.robots" :key='bot.id'>
+    <row class=bot-control shadow=2 v-for="bot in global.robots" :key='bot.id'>
+        <column >
             <td>Bot {{ bot.id.substring(0,4) }}</td>
-            <td><button @click='removeBot(bot)' class='delete'>DELETE</button></td>
-            <td>X: <input :id="`${bot.id}-x`" type='number' class='small-input' :placeholder="bot.x"></td>
-            <td>Y: <input :id="`${bot.id}-y`" type='number' class='small-input' :placeholder="bot.y"></td>
-            <td>k11: <input type='number' class='small-input' step='0.5' max='10' min='-10' :value="getKVal(bot.K, 0, 0)" @input='setKVal(bot.id,0,0,$event.target.value)'></td>
-            <td>k12: <input type='number' class='small-input' step='0.5' max='10' min='-10' :value="getKVal(bot.K, 0, 1)" @input='setKVal(bot.id,0,1,$event.target.value)'></td>
-            <td>k21: <input type='number' class='small-input' step='0.5' max='10' min='-10' :value="getKVal(bot.K, 1, 0)" @input='setKVal(bot.id,1,0,$event.target.value)'></td>
-            <td>k22: <input type='number' class='small-input' step='0.5' max='10' min='-10' :value="getKVal(bot.K, 1, 1)" @input='setKVal(bot.id,1,1,$event.target.value)'></td>
-            <td><button @click='saveXY(bot)'>Save XY</button></td>
-        </tr>
-    </table>
-    <button @click='addBot'>Add Robot</button>
+        </column>
+        <column >
+            <td>X: <input :id="`${bot.id}-x`" type='number' class='small-input' :placeholder="Math.floor(bot.x)"></td>
+            <td>Y: <input :id="`${bot.id}-y`" type='number' class='small-input' :placeholder="Math.floor(bot.y)"></td>
+        </column>
+        <column >
+            K:
+        </column>
+        <column >
+            <row >
+                <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 0, 0)" @input='setKVal(bot.id,0,0,$event.target.value)'/>
+                <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 0, 1)" @input='setKVal(bot.id,0,1,$event.target.value)'/>
+            </row>
+            <row >
+                <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 1, 0)" @input='setKVal(bot.id,1,0,$event.target.value)'/>
+                <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 1, 1)" @input='setKVal(bot.id,1,1,$event.target.value)'/>
+            </row>
+        </column>
+        <ui-button color=red class='delete' @click='removeBot(bot)'>DELETE</ui-button>
+        <!-- <td><button @click='saveXY(bot)'>Save XY</button></td> -->
+    </row>
+    <ui-button color=primary @click='addBot'>Add Robot</ui-button>
 </column>
 </template>
 
@@ -24,6 +35,9 @@ import Robot from "../scripts/Robot"
 
 export default {
     name: 'Controls',
+    data: ()=>({
+        panelHover: false,
+    }),
     computed: {
     },
     methods: {
@@ -45,6 +59,14 @@ export default {
             let y = document.getElementById(`${bot.id}-y`).value //pass id-y as param 
             bot.updateXY(x, y)
         }
+    },
+    created() {
+        window.addEventListener('mouseover',e=>{
+            this.panelHover = false
+        })
+        window.addEventListener('mouseout',e=>{
+            this.panelHover = true
+        })
     }
 }
 </script>
@@ -53,15 +75,47 @@ export default {
 
 .settings-panel {
     height: 100vh;
-    width: 30rem;
+    min-width: 40rem;
+    width: 30vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(70%);
+    transition: all 250ms ease-out;
+    background: white;
+    z-index: 999999;
+}
+.settings-panel > h1 {
+    transition: all 250ms ease-out;
+    margin-left:0;
+}
+.settings-panel:not(:hover):not(.panelHover) > h1 {
+    margin-left: -50%;
 }
 
-table {
-    /* border: 1px solid red; */
-    text-align: left;
-    width: 75%;
-    min-width: 250px;
-    border-spacing: 0px 12px;
+.settings-panel:hover, .settings-panel.panelHover {
+    transform: translateX(0%) !important;
+}
+
+.bot-control {
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 1rem !important;
+    width: fit-content;
+    background: whitesmoke;
+}
+.bot-control > * {
+    margin: 0 1rem !important;
+}
+
+.matrix-input {
+    padding: 0;
+    margin: 0 ;
+    text-align: center;
+    background: whitesmoke;
+    padding: 0 .7rem;
+    width: 60px;
+    min-width: fit-content;
 }
 
 tr {
@@ -74,11 +128,7 @@ td {
 }
 
 .small-input {
-    width: 40px;
-}
-
-.delete {
-    background: lightpink;
+    width: 4em;
 }
 
 </style>
