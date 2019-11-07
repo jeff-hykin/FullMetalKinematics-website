@@ -1,5 +1,5 @@
 <template>
-<div>
+<column class=settings-panel align-v=top>
     <h1>Robots</h1>
     <table align='center'>
         <tr v-for="bot in global.robots" :key='bot.id'>
@@ -15,7 +15,7 @@
         </tr>
     </table>
     <button @click='addBot'>Add Robot</button>
-</div>
+</column>
 </template>
 
 <script>
@@ -50,6 +50,11 @@ export default {
 </script>
 
 <style>
+
+.settings-panel {
+    height: 100vh;
+    width: 30rem;
+}
 
 table {
     /* border: 1px solid red; */
