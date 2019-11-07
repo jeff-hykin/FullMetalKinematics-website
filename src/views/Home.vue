@@ -19,7 +19,7 @@
             </column>
         </row>
         <!-- Projects -->
-        <row class=card-container align-h=space-evenly :wrap=true width=100vw margin=2rem>
+        <row class=card-container align-h=left :wrap=true width=100vw margin=2rem>
             <!-- Project1 Summary -->
             <column class=project-card>
                 <h6>Project 1: Forward Kinematics</h6>
@@ -37,6 +37,16 @@
                     In this project, we continued using Python3 and Qt canvas. We use inverse Kinematics to create a robot arm to follow a particular point.
                 </p>
                 <router-link to=/Projects/project2 class=card-link>
+                    Open Project
+                </router-link>
+            </column>
+            <!-- Project3 Summary -->
+            <column class=project-card>
+                <h6>Project 3: Braitenberg Vehicles</h6>
+                <p>
+                    In this project, we used Javascript and Vue.js to create a 2D simulation of Braitenberg Vehicles. These vehicles follow or avoid light sources corrisponding to an internal response matrix.
+                </p>
+                <router-link to=/Projects/project3 class=card-link>
                     Open Project
                 </router-link>
             </column>

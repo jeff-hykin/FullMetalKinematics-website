@@ -13,6 +13,7 @@
     "css-baseline": "^1.1.4",
     "good-vue": "^1.1.6",
     "keen-ui": "^1.2.0",
+    "mathjs": "^6.2.3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vue-simple-markdown": "^1.1.1"

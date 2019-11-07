@@ -31,5 +31,15 @@ export default new Router({
       name: "project2",
       component: () => import(/* webpackChunkName: "projects" */ "./views/Project2/Main.vue"),
     },
+    {
+      path: "/projects/project3",
+      name: "project3",
+      component: () => import(/* webpackChunkName: "project3" */ "./views/Project3/Main.vue"),
+    },
+    {
+      path: "/projects/project3/app",
+      name: "project3-app",
+      component: () => import(/* webpackChunkName: "project3" */ "./views/Project3/AppWrapper.vue"),
+    },
   ],
 })
