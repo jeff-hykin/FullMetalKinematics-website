@@ -15,7 +15,6 @@
         </tr>
     </table>
     <button @click='addBot'>Add Robot</button>
-    <!-- <button @click='saveXY'>Save x,y</button> -->
 </div>
 </template>
 
@@ -33,8 +32,7 @@ export default {
             this.robots.splice(index, 1)
         },
         addBot() {
-            this.robots.push(new Robot(50, 50, 1, 0, 0, 1))
-            console.log(`this.robots is:`,this.robots)
+            this.robots.push(new Robot(this.robotStartLocation[0], this.robotStartLocation[0], ...this.initialKMatrix))
         },
         getKVal(K, k1, k2) {
             return K.subset(index(k1, k2))

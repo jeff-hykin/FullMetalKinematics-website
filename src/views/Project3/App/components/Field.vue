@@ -1,9 +1,9 @@
 <template>
     <div id='field' @click='addLight' :style="{ minWidth: `${this.fieldWidth}${this.units}`, minHeight: `${this.fieldHeight}${this.units}`, maxWidth: `${this.fieldWidth}${this.units}`, maxHeight: `${this.fieldHeight}${this.units}` }">
         <!-- Lights -->
-        <div class='light' v-for='light in lights' 
-            :key="light.id" @click.stop='removeLight(light.id)' 
-            :style="{ position: 'absolute', left: light.x-7.5 + 'px', bottom: light.y-7.5 + 'px' }">
+        <div class='light' v-for='(light, index) in lights' 
+            :key="light.id" @click.stop='removeLight(index)' 
+            :style="{ position: 'absolute', left: light.x-lightSize + 'px', bottom: light.y-lightSize + 'px' }">
         </div>
 
         <!-- Robots -->
@@ -54,14 +54,7 @@ export default {
         addLight(event) {
             this.lights.push(new Light(event.clientX-10, this.fieldHeight-event.clientY+10))
         },
-        removeLight(id) {
-            let index = -1
-            for(let i = 0; i < this.lights.length; i++) {
-                if(this.lights[i].id == id) {
-                index = i
-                break
-                }
-            }
+        removeLight(index) {
             this.lights.splice(index, 1)
         },
         antenna(senPos, bodyPos, color, thickness) {
