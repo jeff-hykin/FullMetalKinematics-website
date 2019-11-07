@@ -27,7 +27,8 @@ Vue.mixin({
 })
 
 export default new Vue({
-    methods: {},
+    methods: {
+    },
     created() {
         setInterval(() => {
             let shiftAmount = 50
@@ -36,7 +37,6 @@ export default new Vue({
                 shiftAmount = panel.clientWidth * (1- globalData.panelHiddenPercent)
             } catch (e) {
             }
-            console.log(`shiftAmount is:`,shiftAmount)
             globalDataModifier.global.fieldHeight = this.$el.clientHeight
             globalDataModifier.global.fieldWidth  = this.$el.clientWidth - shiftAmount
         }, 1000);

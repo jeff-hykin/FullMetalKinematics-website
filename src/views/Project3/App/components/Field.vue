@@ -5,9 +5,11 @@
             :key="light.id" @click.stop='removeLight(index)' 
             :style="{ position: 'absolute', left: light.x-global.lightSize + 'px', bottom: light.y-global.lightSize + 'px' }">
         </div>
+        
+        <ui-button class=clear-lights-btn color=primary @click='clearLights'>Clear Lights</ui-button>
 
         <!-- Robots -->
-        <div v-for='robot in global.robots' :key='robot.id'>
+        <div class=animate v-for='robot in global.robots' :key='robot.id'>
             <div class='wheel' 
                 :key="robot.id+3"  
                 :style="{ position: 'absolute', left: robot.getWheelPositions()[0].x-5 + 'px', bottom: robot.getWheelPositions()[0].y-5 + 'px' }">
@@ -51,6 +53,11 @@ export default {
     computed: {
     },
     methods: {
+        clearLights() {
+            setTimeout(() => {
+                this.lights = []
+            }, this.global.updateInterval+1)
+        },
         addLight(event) {
             this.lights.push(new Light(event.clientX-10, this.global.fieldHeight-event.clientY+10))
         },
@@ -84,7 +91,6 @@ export default {
                 top: `${cy}px`, 
                 width: `${length}px`,
                 transform: `rotate(${angle}deg)`,
-                // transition: `all 250ms ease-out`,
             }
 
             return style
@@ -113,6 +119,12 @@ export default {
     background-color: var(--grey-700);
     left: 0;
     top: 0;
+}
+
+.clear-lights-btn {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
 }
 
 .light {
@@ -144,5 +156,8 @@ export default {
     background-color: lightcoral;
     border-radius: 50%;
     display: inline-block;
+}
+.animate {
+    transition: all 30ms ease;
 }
 </style>

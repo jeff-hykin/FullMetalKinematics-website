@@ -14,12 +14,12 @@
         </column>
         <column >
             <row >
-                <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 0, 0)" @input='setKVal(bot.id,0,0,$event.target.value)'/>
-                <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 0, 1)" @input='setKVal(bot.id,0,1,$event.target.value)'/>
+                <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 0, 0)" @input='setKVal(bot, 0,0,$event)'/>
+                <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 0, 1)" @input='setKVal(bot, 0,1,$event)'/>
             </row>
             <row >
-                <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 1, 0)" @input='setKVal(bot.id,1,0,$event.target.value)'/>
-                <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 1, 1)" @input='setKVal(bot.id,1,1,$event.target.value)'/>
+                <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 1, 0)" @input='setKVal(bot,1,0,$event)'/>
+                <ui-textbox class=matrix-input type='number' step='0.5' :max='10' :min='-10' :value="getKVal(bot.K, 1, 1)" @input='setKVal(bot,1,1,$event)'/>
             </row>
         </column>
         <ui-button color=red class='delete' @click='removeBot(bot)'>DELETE</ui-button>
