@@ -96,7 +96,7 @@ export default {
     components: {TableOfContents},
     data: _=>({
         sourceCodeLink: "https://github.tamu.edu/FullMetalKinematics/Project4",
-        reportLink: "https://drive.google.com/file/d/1zBTuWgYPHpoq7rfI42atSO1dsLU0g5_f/view?usp=sharing"
+        reportLink: "https://docs.google.com/document/d/1k8rZh1vGlwd8itFnhVrYyPAhz8IPuaDtykkIN74H5eI/edit?usp=sharing"
     })
 }
 </script>
