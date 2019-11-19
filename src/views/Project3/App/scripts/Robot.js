@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { create, all } from 'mathjs'
 import uuidv4 from 'uuid/v4'
 

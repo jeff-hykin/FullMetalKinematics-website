@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Vue from "vue"
 import Router from "vue-router"
 import Home from "./views/Home.vue"
@@ -41,5 +42,10 @@ export default new Router({
       name: "project3-app",
       component: () => import(/* webpackChunkName: "project3" */ "./views/Project3/AppWrapper.vue"),
     },
-  ],
+    {
+      path: "/projects/project4",
+      name: "project4",
+      component: () => import(/* webpackChunkName: "project4" */ "./views/Project4/Main.vue"),
+    }
+  ]
 })

@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const component = {
     props: {
         'wrap':{

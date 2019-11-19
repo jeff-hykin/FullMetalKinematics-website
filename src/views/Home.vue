@@ -50,6 +50,16 @@
                     Open Project
                 </router-link>
             </column>
+
+            <column class=project-card>
+                <h6>Project 4: Racecar</h6>
+                <p>
+                    In this project, we used Javascript and Vue.js to create a 2D simulation of driving a Porsche.
+                </p>
+                <router-link to=/Projects/project4 class=card-link>
+                    Open Project
+                </router-link>
+            </column>
         </row>
     </column>
 </template>
