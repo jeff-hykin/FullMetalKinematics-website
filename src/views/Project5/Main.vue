@@ -34,7 +34,7 @@
                   - Thomas: Added the buttons. Let's get someone to do the callback functions and the other two of us can implement the functions.
                   - Mitchell: I can do the callback functions
                 - 2. Debugging and other features
-                  - Mitchell: Let me try to implement smoothing for arm transitions
+                  - Mitchell: Let me try to implement the path finding and drawing
                 
             </markdown>
             <div class=my-v-spacer></div>
