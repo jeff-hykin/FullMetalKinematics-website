@@ -51,12 +51,24 @@
                 </router-link>
             </column>
 
+            <!-- Project4 Summary -->
             <column class=project-card>
                 <h6>Project 4: Racecar</h6>
                 <p>
                     In this project, we used Javascript and Vue.js to create a 2D simulation of driving a Porsche.
                 </p>
                 <router-link to=/Projects/project4 class=card-link>
+                    Open Project
+                </router-link>
+            </column>
+            
+            <!-- Project5 Summary -->
+            <column class=project-card>
+                <h6>Project 5: Pathfinding</h6>
+                <p>
+                    In this project, we used Python Qt to simulate 2D pathfinding using cell decomposition.
+                </p>
+                <router-link to=/Projects/project5 class=card-link>
                     Open Project
                 </router-link>
             </column>
@@ -70,7 +82,8 @@
     export default {
         components: {
             Card,
-            Column, Row 
+            Column,
+            Row
         }
     }
 </script>

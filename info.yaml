@@ -1,0 +1,23 @@
+(using_atk_version): 1.0
+(project):
+    name: Robotics Website
+    
+    commands: &commands # if you dont know what the & means, see https://blog.daemonl.com/2016/02/yaml.html
+        dev: npm run serve
+        build_for_production: npm run build
+        serve_production: npm run prod-serve
+        (setup): echo 'setup command unset' 
+    
+    (advanced_setup):
+        (project_commands):
+            <<: *commands
+        # caveats for a specific OS
+        when(--os is 'mac'):
+            (project_commands):
+                <<: *commands
+        when(--os is 'windows'):
+            (project_commands):
+                <<: *commands
+        when(--os is 'linux'):
+            (project_commands):
+                <<: *commands
