@@ -110,6 +110,10 @@
         margin-bottom: 0.2rem;
         justify-self: flex-end;
     }
+    p {
+        min-height: 3rem;
+        overflow: scroll;
+    }
 }
 
 .my-title {

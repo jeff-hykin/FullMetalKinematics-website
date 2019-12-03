@@ -4,7 +4,7 @@
             <h1 class=my-title>
                 About Us
             </h1>
-            <p>
+            <p style="padding-left: 1rem;padding-right: 1rem;">
                 Howdy! We are Full Metal Kinematics. We are a team of 5 that are in CSCE
                 452 - Robotics and Spatial Intelligence course at Texas A&amp;M University.
             </p>
