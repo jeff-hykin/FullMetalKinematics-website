@@ -7,11 +7,11 @@
             <markdown id=task-allocation>
                 # Task Allocation
                 <br>
-                <br>**Thomas McDonald:** Python Development
-                <br>**Jon Williamson:** Equation Derivation
-                <br>**Jeff Hykin:** Website development, link code
-                <br>**Alejandro Londono:** Python Development
-                <br>**Mitchell Eldridge:** Python Development
+                <br>**Thomas McDonald:** Code implementation
+                <br>**Jon Williamson:** Code implementation, Report
+                <br>**Jeff Hykin:** Website base, code implementation
+                <br>**Alejandro Londono:** Code implementation
+                <br>**Mitchell Eldridge:** Code implementation
             </markdown>
             <div class=my-v-spacer></div>
             <!-- Meeting Log -->
@@ -21,20 +21,20 @@
                 
                 #### Meeting 1
                 - 1. Discuss what has been done
-                  - Jeff: I have updated the Website
-                  - Jon: I have derived the equations we should use for different cases
+                  - Thomas: I began the base GUI. It is similar to what we used for Projects 1 and 2.
                 - 2. Discuss plan
-                  - Thomas: Let's discuss breakdown of what is left
-                  - Mitchell: we can base this project on the last one and add the new implementations
-                  - Alejandro: We can implement equations in code tomorrow for the next meeting. Created repo for this project
-                  - Thomas: Sounds good. I will go ahead and add the new buttons then before tomorrow.
+                  - Jon: I will create the obstacle object and the necessary control mechanisms.
+                  - Alejandro: I will create the cell object and the necessary interface with the obstacle objects.
+                  - Mitchell: I will continue with the development of the cells and the algorithm following Alejandro’s completed work.
+                  - Jeff: I will update the website as necessary.
 
                 #### Meeting 2
-                - 1. Discuss work plan
-                  - Thomas: Added the buttons. Let's get someone to do the callback functions and the other two of us can implement the functions.
-                  - Mitchell: I can do the callback functions
-                - 2. Debugging and other features
-                  - Mitchell: Let me try to implement the path finding and drawing
+                - 1. Discuss what has been done
+                  - Jon: I have completed the obstacle class with collision detection and GUI integration.
+                  - Alejandro and Mitchell: We have completed the cell class and its integration with obstacle positions.
+                  - Jeff: I have made the project more modular and worked on the website. I also colored the start and end points.
+                - 2. Discuss Next Steps
+                  - Alejandro and Mitchell: We will finish the algorithm using BFS.
                 
             </markdown>
             <div class=my-v-spacer></div>
@@ -96,7 +96,7 @@ export default {
     components: {TableOfContents},
     data: _=>({
         sourceCodeLink: "https://github.tamu.edu/FullMetalKinematics/Project5",
-        reportLink: "https://drive.google.com/file/d/1zBTuWgYPHpoq7rfI42atSO1dsLU0g5_f/view?usp=sharing"
+        reportLink: "https://drive.google.com/file/d/1I-6MSchsuFEbbhSkN6FEpexHghU9pkfC/view?usp=sharing"
     })
 }
 </script>
